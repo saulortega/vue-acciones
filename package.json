@@ -1,0 +1,28 @@
+{
+  "name": "vue-acciones",
+  "version": "0.0.3",
+  "description": "Acciones Vue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saulortega/vue-acciones.git"
+  },
+  "keywords": [
+    "vue",
+    "acciones",
+    "rest",
+    "crud"
+  ],
+  "author": "Saúl Ortega",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saulortega/vue-acciones/issues"
+  },
+  "homepage": "https://github.com/saulortega/vue-acciones#readme",
+  "dependencies": {
+    "axios": "^0.18.0"
+  }
+}
