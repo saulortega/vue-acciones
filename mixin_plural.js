@@ -8,14 +8,7 @@ var MixinPlural = {
 		total: 0,
 		paginando: {},
 		buscar: '',
-    tl: 0,
-    /*VDataTable: {
-      itemKey: 'llave',
-      noDataText: 'No hay datos disponibles',
-      noResultsText: 'No se encontraron resultados',
-      rowsPerPageItems: [10, 25, 50, 100],
-      rowsPerPageText: 'Filas por página:'
-    },*/
+    	tl: 0,
 	}),
 	watch: {
 		'buscar': function(bscr, bscrAntes){

@@ -14,29 +14,35 @@
       </v-card-title>
 
       <v-data-table
-      :loading="loading"
+      :loading="cargando"
       :headers="headers"
-      :items="items"
+      :items="datos"
       item-key="llave"
       no-data-text="No hay datos disponibles"
       no-results-text="No se encontraron resultados"
       :rows-per-page-items="[10, 25, 50, 100]"
       rows-per-page-text="Filas por página:"
-      :pagination.sync="pagination"
-      :total-items="totalItems"
+      :pagination.sync="paginando"
+      :total-items="total"
       disable-initial-sort
       class="elevation-1"
       >
-        <slot name="items"></slot>
-        <slot name="footer"></slot>
+        <template slot="items" slot-scope="props">
+          <slot name="items" v-bind="props"></slot>
+        </template>
       </v-data-table>
-    </v-card>
 
+    </v-card>
   </div>
 </template>
 
 <script>
+import { MixinPlural } from '../index'
+
 export default {
-  props: ['loading', 'headers', 'items', 'pagination', 'totalItems', 'buscar']
+  name: 'va-data-table',
+  data: () => ({}),
+  mixins: [MixinPlural],
+  props: ['recurso', 'headers'],
 }
 </script>
