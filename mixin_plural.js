@@ -45,14 +45,17 @@ var MixinPlural = {
 					this.buscar = ''
 				}
 
+				let prelistado = this.prelistado || this.$parent.prelistado
+				let poslistado = this.poslistado || this.$parent.poslistado
+
 				this.cargando = true
-				fncns.PrmsaFncn(this.prelistado).then( () => {
+				fncns.PrmsaFncn(prelistado).then( () => {
 					axios.get(this.recurso, { params: Object.assign({'buscar': (this.buscar || '')}, this.paginando) }).then( rta => {
 						//this.datos = this.interceptorListado(rta.data || [])
 						this.datos = (rta.data || [])
 						this.cargando = false
-						if(this.poslistado){
-							this.poslistado()
+						if(poslistado){
+							poslistado()
 						}
 						this.total = Number(rta.headers['x-total']) || 0
 						resolve(rta)
